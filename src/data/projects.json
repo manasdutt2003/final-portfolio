@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "MSME Invest Connect",
-    "description": "A full-stack MERN marketplace connecting MSMEs with investors. Features authentication, real-time data, and investment tracking.",
+    "description": "Full-stack expense tracker with AI-powered conversational interface. Features NLP transaction logging, real-time analytics, and JWT authentication.",
     "tech": [
       "MongoDB",
       "Express",
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "title": "AI Learning Style Predictor",
-    "description": "Interactive dashboard analyzing student learning patterns using FSLSM dimensions and CatBoost machine learning.",
+    "description": "Explainable ML pipeline to predict FSLSM learning dimensions. Improved robustness on imbalanced data using SMOTE and hyperparameter tuning.",
     "tech": [
       "Python",
       "Streamlit",
@@ -70,7 +70,7 @@
   {
     "id": 6,
     "title": "Shadow Removal System",
-    "description": "Advanced image processing pipeline for detecting and removing shadows from images using deep neural networks.",
+    "description": "Enhanced DESDNET deep learning architecture, achieving 18% improvement in IoU. Optimized inference pipeline to process 10,000+ satellite images.",
     "tech": [
       "Python",
       "PyTorch",
