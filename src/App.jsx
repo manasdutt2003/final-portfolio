@@ -1,19 +1,17 @@
-import { useState } from 'react';
-import ChatList from './components/ChatList';
-import Discover from './components/Discover';
-import Me from './components/Me';
-import BottomNav from './components/BottomNav';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('chats');
-
   return (
-    <div className="bg-black min-h-screen text-black font-sans">
-      {activeTab === 'chats' && <ChatList setView={setActiveTab} />}
-      {activeTab === 'discover' && <Discover />}
-      {activeTab === 'me' && <Me />}
-
-      <BottomNav activeTab={activeTab} setActiveTab={setActiveTab} />
+    <div className="bg-black min-h-screen text-white font-sans selection:bg-white/30">
+      <Navbar />
+      <Hero />
+      <Experience />
+      <Projects />
+      <Contact />
     </div>
   );
 }
