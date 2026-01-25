@@ -11,6 +11,7 @@ interface ProjectProps {
         link: string;
         icon: any;
         featured: boolean;
+        clue?: string;
     };
     index: number;
 }
@@ -55,6 +56,15 @@ export default function ProjectCard({ project, index }: ProjectProps) {
                         ))}
                     </div>
                 </div>
+
+                {/* Hidden Clue */}
+                {project.clue && (
+                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span className="font-mono text-[10px] text-zinc-700 tracking-[0.3em] uppercase select-none">
+                            Code: {project.clue}
+                        </span>
+                    </div>
+                )}
             </div>
         </motion.div>
     );

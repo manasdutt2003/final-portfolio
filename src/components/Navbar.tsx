@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { useGame } from "@/context/GameContext";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -36,7 +37,7 @@ export default function Navbar() {
                     MD<span className="text-emerald-500">.</span>
                 </div>
 
-                <div className="flex gap-8">
+                <div className="flex gap-8 items-center">
                     {navLinks.map((link) => (
                         <ScrollLink
                             key={link.name}
@@ -48,8 +49,39 @@ export default function Navbar() {
                             {link.name}
                         </ScrollLink>
                     ))}
+
+                    <ResumeButton />
                 </div>
             </div>
         </motion.nav>
+    );
+}
+
+function ResumeButton() {
+    const { isUnlocked, openModal } = useGame();
+    // Import Lock/Download icons inside here or at top
+    const { Lock, Download } = require("lucide-react");
+
+    if (isUnlocked) {
+        return (
+            <a
+                href="/resume.pdf"
+                target="_blank"
+                className="flex items-center gap-2 px-4 py-2 bg-emerald-500/10 text-emerald-500 text-sm font-bold rounded-full border border-emerald-500/20 hover:bg-emerald-500 hover:text-black transition-all"
+            >
+                <Download size={16} />
+                RESUME
+            </a>
+        );
+    }
+
+    return (
+        <button
+            onClick={openModal}
+            className="flex items-center gap-2 px-4 py-2 bg-zinc-800 text-zinc-400 text-sm font-bold rounded-full border border-zinc-700 hover:border-red-500 hover:text-red-500 transition-all"
+        >
+            <Lock size={16} />
+            LOCKED
+        </button>
     );
 }

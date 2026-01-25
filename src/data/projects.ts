@@ -7,7 +7,8 @@ export const projects = [
         tags: ["Next.js", "Tailwind CSS", "Framer Motion", "GraphQL"],
         link: "https://github.com/manasdutt2003/LeetMetric",
         featured: true,
-        icon: Code
+        icon: Code,
+        clue: "NEXT"
     },
     {
         title: "Learning Style Identifier",
@@ -15,7 +16,8 @@ export const projects = [
         tags: ["Python", "Machine Learning", "Streamlit", "PyTorch"],
         link: "https://github.com/manasdutt2003", // Placeholder
         featured: true,
-        icon: Brain
+        icon: Brain,
+        clue: "AI"
     },
     {
         title: "MSME Investment Platform",

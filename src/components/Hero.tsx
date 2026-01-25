@@ -16,8 +16,9 @@ export default function Hero() {
                 transition={{ duration: 0.8 }}
                 className="text-center max-w-4xl space-y-6 z-10"
             >
-                <span className="text-emerald-500 font-mono text-sm tracking-widest uppercase mb-4 block">
+                <span className="text-emerald-500 font-mono text-sm tracking-widest uppercase mb-4 block group relative cursor-help w-max mx-auto">
                     Portfolio 2026
+                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] text-zinc-600 tracking-[0.2em]">Code: GEN</span>
                 </span>
                 <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
                     Manas Dutt

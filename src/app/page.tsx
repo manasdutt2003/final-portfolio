@@ -4,12 +4,14 @@ import ProjectCard from "@/components/ProjectCard";
 import TechStack from "@/components/TechStack";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
+import UnlockModal from "@/components/UnlockModal";
 import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black selection:bg-emerald-500/30">
       <Navbar />
+      <UnlockModal />
       <div id="hero">
         <Hero />
       </div>
