@@ -39,7 +39,7 @@ export default function Contact() {
                         <form
                             action="mailto:manasdutt2003@gmail.com"
                             method="post"
-                            enctype="text/plain"
+                            encType="text/plain"
                             className="space-y-4"
                         >
                             <div className="space-y-2">
