@@ -42,6 +42,7 @@ export default function Home() {
 
       <footer className="py-12 border-t border-zinc-900 text-center text-zinc-600">
         <p>&copy; 2026 Manas Dutt. All rights reserved.</p>
+        <p className="text-xs mt-2 text-zinc-800">v2.0 (Puzzle Edition)</p>
       </footer>
     </main>
   );
