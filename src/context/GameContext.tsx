@@ -17,6 +17,16 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+        // Check for reset flag to re-lock for testing
+        const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.get("reset") === "true") {
+            localStorage.removeItem("portfolio_unlocked");
+            setIsUnlocked(false);
+            // Clean up the URL
+            window.history.replaceState({}, "", window.location.pathname);
+            return;
+        }
+
         const saved = localStorage.getItem("portfolio_unlocked");
         if (saved === "true") {
             setIsUnlocked(true);
