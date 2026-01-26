@@ -14,7 +14,7 @@ export const projects = [
         title: "Learning Style Identifier",
         description: "ML pipeline using SOTA models (KAN, TabNet, SS-VAE) to identify student learning styles from behavioral data.",
         tags: ["Python", "Machine Learning", "Streamlit", "PyTorch"],
-        link: "https://github.com/manasdutt2003/Learning-Style-Identification-using-semi-supervised-learning",
+        link: "https://learning-style-identifier.vercel.app/",
         featured: true,
         icon: Brain,
         clue: "AI"
@@ -23,7 +23,7 @@ export const projects = [
         title: "MSME Investment Platform",
         description: "Full-stack MERN marketplace connecting manufacturing MSMEs with investors for working capital.",
         tags: ["React", "Node.js", "MongoDB", "Express"],
-        link: "https://github.com/manasdutt2003", // Placeholder
+        link: "https://msme-investment-platform.vercel.app/",
         featured: false,
         icon: Layout
     },
@@ -31,7 +31,7 @@ export const projects = [
         title: "Bus Fleet Management",
         description: "System for managing bus schedules and fleets, featuring a Gemini AI chatbot integration.",
         tags: ["Python", "Flask", "Gemini AI", "Render"],
-        link: "https://github.com/manasdutt2003", // Placeholder
+        link: "https://bus-fleet-management.vercel.app/",
         featured: false,
         icon: Calculator
     }
