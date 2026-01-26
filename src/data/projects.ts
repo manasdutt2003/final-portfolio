@@ -34,7 +34,7 @@ export const projects = [
         title: "Bus Fleet Management",
         description: "System for managing bus schedules and fleets, featuring a Gemini AI chatbot integration.",
         tags: ["Python", "Flask", "Gemini AI", "Render"],
-        demoLink: "https://q-achatbot-xhkrg9qzif8gudy7dt78ce.streamlit.app/",
+        demoLink: "https://integrated-tracking-and-reporting-system.onrender.com/",
         githubLink: "https://github.com/manasdutt2003/Bus-Fleet-Management",
         featured: false,
         icon: Calculator
