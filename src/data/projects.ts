@@ -25,7 +25,7 @@ export const projects = [
         title: "MSME Investment Platform",
         description: "Full-stack MERN marketplace connecting manufacturing MSMEs with investors for working capital.",
         tags: ["React", "Node.js", "MongoDB", "Express"],
-        demoLink: "https://msme-investment-platform.vercel.app/",
+        demoLink: "https://github.com/manasdutt2003/MSME-Investment-Platform",
         githubLink: "https://github.com/manasdutt2003/MSME-Investment-Platform",
         featured: false,
         icon: Layout
