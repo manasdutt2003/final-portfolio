@@ -26,7 +26,7 @@ export const projects = [
         description: "Full-stack MERN marketplace connecting manufacturing MSMEs with investors for working capital.",
         tags: ["React", "Node.js", "MongoDB", "Express"],
         demoLink: "https://github.com/manasdutt2003/MSME-Investment-Platform",
-        githubLink: "https://github.com/manasdutt2003/MSME-Investment-Platform",
+        githubLink: "https://github.com/manasdutt2003",
         featured: false,
         icon: Layout
     },
@@ -35,7 +35,7 @@ export const projects = [
         description: "System for managing bus schedules and fleets, featuring a Gemini AI chatbot integration.",
         tags: ["Python", "Flask", "Gemini AI", "Render"],
         demoLink: "https://integrated-tracking-and-reporting-system.onrender.com/",
-        githubLink: "https://github.com/manasdutt2003/Bus-Fleet-Management",
+        githubLink: "https://github.com/manasdutt2003",
         featured: false,
         icon: Calculator
     }
