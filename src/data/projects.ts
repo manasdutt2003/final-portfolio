@@ -5,7 +5,7 @@ export const projects = [
         title: "LeetMetric",
         description: "A premium LeetCode stats visualizer with dark mode, animations, and glassmorphism. Built with Next.js 14 and Tailwind.",
         tags: ["Next.js", "Tailwind CSS", "Framer Motion", "GraphQL"],
-        link: "https://github.com/manasdutt2003/LeetMetric",
+        link: "https://leetmetric.vercel.app/",
         featured: true,
         icon: Code,
         clue: "NEXT"
@@ -14,7 +14,7 @@ export const projects = [
         title: "Learning Style Identifier",
         description: "ML pipeline using SOTA models (KAN, TabNet, SS-VAE) to identify student learning styles from behavioral data.",
         tags: ["Python", "Machine Learning", "Streamlit", "PyTorch"],
-        link: "https://github.com/manasdutt2003", // Placeholder
+        link: "https://github.com/manasdutt2003/Learning-Style-Identification-using-semi-supervised-learning",
         featured: true,
         icon: Brain,
         clue: "AI"
