@@ -8,7 +8,6 @@ interface ProjectProps {
         title: string;
         description: string;
         tags: string[];
-        tags: string[];
         githubLink: string;
         demoLink: string;
         icon: any;
