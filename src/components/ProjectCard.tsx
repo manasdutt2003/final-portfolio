@@ -8,7 +8,9 @@ interface ProjectProps {
         title: string;
         description: string;
         tags: string[];
-        link: string;
+        tags: string[];
+        githubLink: string;
+        demoLink: string;
         icon: any;
         featured: boolean;
         clue?: string;
@@ -36,9 +38,14 @@ export default function ProjectCard({ project, index }: ProjectProps) {
                         <div className="p-3 bg-zinc-800 rounded-2xl text-white group-hover:scale-110 transition-transform duration-300">
                             <Icon size={28} />
                         </div>
-                        <Link href={project.link} target="_blank" className="p-2 text-zinc-500 hover:text-white transition-colors">
-                            <Github size={20} />
-                        </Link>
+                        <div className="flex gap-2">
+                            <Link href={project.githubLink} target="_blank" className="p-2 text-zinc-500 hover:text-white transition-colors" title="View Code">
+                                <Github size={20} />
+                            </Link>
+                            <Link href={project.demoLink} target="_blank" className="p-2 text-zinc-500 hover:text-emerald-400 transition-colors" title="Live Demo">
+                                <ExternalLink size={20} />
+                            </Link>
+                        </div>
                     </div>
 
                     <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">{project.title}</h3>
