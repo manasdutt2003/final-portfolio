@@ -15,7 +15,7 @@ export const projects = [
         title: "Learning Style Identifier",
         description: "ML pipeline using SOTA models (KAN, TabNet, SS-VAE) to identify student learning styles from behavioral data.",
         tags: ["Python", "Machine Learning", "Streamlit", "PyTorch"],
-        demoLink: "https://github.com/manasdutt2003/Learning-Style-Identification-using-semi-supervised-learning",
+        demoLink: "https://learning-style-identification-using-semi-supervised-learning-6.streamlit.app/",
         githubLink: "https://github.com/manasdutt2003/Learning-Style-Identification-using-semi-supervised-learning",
         featured: true,
         icon: Brain,
@@ -34,7 +34,7 @@ export const projects = [
         title: "Bus Fleet Management",
         description: "System for managing bus schedules and fleets, featuring a Gemini AI chatbot integration.",
         tags: ["Python", "Flask", "Gemini AI", "Render"],
-        demoLink: "https://bus-fleet-management.vercel.app/",
+        demoLink: "https://q-achatbot-xhkrg9qzif8gudy7dt78ce.streamlit.app/",
         githubLink: "https://github.com/manasdutt2003/Bus-Fleet-Management",
         featured: false,
         icon: Calculator
