@@ -13,9 +13,9 @@ export default function Contact() {
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
-                            <h2 className="text-4xl font-bold text-white mb-6">Let's Work Together</h2>
+                            <h2 className="text-4xl font-bold text-white mb-6">Let&apos;s Work Together</h2>
                             <p className="text-zinc-400 mb-8">
-                                I'm currently available for freelance projects and open to full-time opportunities.
+                                I&apos;m currently available for freelance projects and open to full-time opportunities.
                             </p>
 
                             <div className="space-y-4">

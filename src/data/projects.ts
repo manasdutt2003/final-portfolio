@@ -1,4 +1,6 @@
-import { Code, Brain, Layout, Calculator, Server, Terminal, Smartphone } from "lucide-react";
+import { Code, Brain, Layout, Calculator } from "lucide-react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Server, Terminal, Smartphone, ExternalLink, ArrowRight, CircleDot } from "lucide-react";
 
 export const projects = [
     {

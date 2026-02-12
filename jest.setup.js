@@ -8,4 +8,4 @@ const localStorageMock = {
     clear: jest.fn(),
 };
 
-global.localStorage = localStorageMock as any;
+global.localStorage = localStorageMock as any; // eslint-disable-line @typescript-eslint/no-explicit-any

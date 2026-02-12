@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ArrowRight, CircleDot } from "lucide-react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import clsx from "clsx";
 
 interface Props {
