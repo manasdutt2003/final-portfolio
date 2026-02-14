@@ -1,0 +1,35 @@
+name: Profile Activity Update
+
+on:
+  schedule:
+    # Run at minute 24 past every 2nd hour
+    - cron: '24 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Update Activity Stats
+      run: |
+        node scripts/update_activity.js
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'Manas Dutt'
+        git config --global user.email 'manasdutt2003@gmail.com'
+        git add src/data/daily-activity.json
+        git commit -m "chore: update active coding streak stats [skip ci]" || echo "No changes to commit"
+        git push
