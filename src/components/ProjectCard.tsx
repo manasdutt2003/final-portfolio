@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
+import type { LucideIcon } from "lucide-react";
 
 interface ProjectProps {
     project: {
@@ -10,7 +11,7 @@ interface ProjectProps {
         tags: string[];
         githubLink: string;
         demoLink: string;
-        icon: any;
+        icon: LucideIcon;
         featured: boolean;
         clue?: string;
     };

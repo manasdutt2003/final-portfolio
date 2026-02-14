@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { Lock, Download } from "lucide-react";
 import { useGame } from "@/context/GameContext";
 
 export default function Navbar() {
@@ -59,8 +60,6 @@ export default function Navbar() {
 
 function ResumeButton() {
     const { isUnlocked, openModal } = useGame();
-    // Import Lock/Download icons inside here or at top
-    const { Lock, Download } = require("lucide-react");
 
     if (isUnlocked) {
         return (
