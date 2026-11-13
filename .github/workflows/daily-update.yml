@@ -1,9 +1,6 @@
 name: Daily Portfolio Update
 
 on:
-  schedule:
-    # Run at 03:00 UTC every day
-    - cron: '30 */6 * * *'
   workflow_dispatch:
 
 permissions:

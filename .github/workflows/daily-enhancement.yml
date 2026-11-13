@@ -1,9 +1,6 @@
 name: Profile Activity Update
 
 on:
-  schedule:
-    # Run at minute 24 past every 2nd hour
-    - cron: '24 */2 * * *'
   workflow_dispatch:
 
 permissions:
