@@ -1,13 +1,11 @@
 import { Code, Brain, Layout, Calculator } from "lucide-react";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Server, Terminal, Smartphone, ExternalLink, ArrowRight, CircleDot } from "lucide-react";
 
 export const projects = [
     {
         title: "LeetMetric",
-        description: "A premium LeetCode stats visualizer with dark mode, animations, and glassmorphism. Built with Next.js 14 and Tailwind.",
+        description: "A premium LeetCode stats visualizer with dark mode, animations, and glassmorphism. Built with Next.js and Tailwind.",
         tags: ["Next.js", "Tailwind CSS", "Framer Motion", "GraphQL"],
-        demoLink: "https://leetmetric.vercel.app/",
+        demoLink: "https://leet-metric-seven.vercel.app/",
         githubLink: "https://github.com/manasdutt2003/LeetMetric",
         featured: true,
         icon: Code,
@@ -37,7 +35,7 @@ export const projects = [
         description: "System for managing bus schedules and fleets, featuring a Gemini AI chatbot integration.",
         tags: ["Python", "Flask", "Gemini AI", "Render"],
         demoLink: "https://integrated-tracking-and-reporting-system.onrender.com/",
-        githubLink: "https://github.com/manasdutt2003",
+        githubLink: "https://github.com/manasdutt2003/Integrated-Tracking-and-Reporting-System",
         featured: false,
         icon: Calculator
     }

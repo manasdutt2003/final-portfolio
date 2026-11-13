@@ -48,6 +48,7 @@ export default function StatsChallenge({ onComplete }: Props) {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => handleSelect(idx)}
+                        aria-label={`Histogram ${idx + 1}`}
                         className={clsx(
                             "p-4 bg-zinc-950 border rounded-xl transition-colors relative overflow-hidden h-32 flex items-end justify-between gap-1",
                             selected === idx && error ? "border-red-500 bg-red-500/10" : "border-zinc-800 hover:border-emerald-500/50"
@@ -67,7 +68,7 @@ export default function StatsChallenge({ onComplete }: Props) {
                 ))}
             </div>
 
-            {error && <p className="text-red-500 text-center text-xs font-mono animate-pulse">ERROR: PATTERN MATCH FAILURE. TRY AGAIN.</p>}
+            {error && <p role="alert" className="text-red-500 text-center text-xs font-mono animate-pulse">ERROR: PATTERN MATCH FAILURE. TRY AGAIN.</p>}
         </div>
     );
 }

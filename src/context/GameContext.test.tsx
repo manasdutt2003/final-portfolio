@@ -81,13 +81,26 @@ describe("GameContext", () => {
         });
     });
 
+    test("restores a saved unlock from localStorage", async () => {
+        localStorage.setItem("portfolio_unlocked", "true");
+        render(
+            <GameProvider>
+                <TestComponent />
+            </GameProvider>
+        );
+
+        await waitFor(() => {
+            expect(screen.getByTestId("unlock-status")).toHaveTextContent("unlocked");
+        });
+    });
+
     test("throws error when useGame() called outside provider", () => {
         // Suppress console.error for this test
         const spy = jest.spyOn(console, "error").mockImplementation(() => {});
         
         expect(() => {
             render(<TestComponent />);
-        }).toThrow("useGame must be used within GameProvider");
+        }).toThrow("useGame must be used within a GameProvider");
         
         spy.mockRestore();
     });

@@ -13,7 +13,7 @@ describe("StatsChallenge", () => {
     test("renders challenge with instructions and options", () => {
         render(<StatsChallenge onComplete={mockOnComplete} />);
         
-        expect(screen.getByText(/identify the uniform distribution/i)).toBeInTheDocument();
+        expect(screen.getByText(/uniform distribution/i)).toBeInTheDocument();
         const buttons = screen.getAllByRole("button");
         expect(buttons.length).toBe(4); // 4 histogram options
     });
@@ -44,7 +44,7 @@ describe("StatsChallenge", () => {
         fireEvent.click(buttons[0]); // Wrong answer
         
         await waitFor(() => {
-            expect(screen.getByText(/incorrect/i)).toBeInTheDocument();
+            expect(screen.getByRole("alert")).toHaveTextContent(/pattern match failure/i);
         });
         
         jest.useRealTimers();
