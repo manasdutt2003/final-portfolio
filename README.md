@@ -12,7 +12,8 @@ histograms, then solve a Markov-chain question.
 - Puzzle modal that unlocks the live demo links; the result is remembered in
   the browser
 - Statically rendered, so it loads fast and deploys anywhere Next.js runs
-- Unit tests for the puzzle and the unlock state
+- Unit tests for the puzzle, the unlock state and the daily-activity script
+- Dockerfile for self-hosting
 
 ## Tech stack
 
@@ -29,6 +30,26 @@ npm run lint
 npm run typecheck
 npm run build
 ```
+
+## Configuration
+
+All variables are optional.
+
+| Variable | Used by | Effect |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | `src/app/layout.tsx` | Sets `metadataBase` so social/SEO URLs resolve against your domain. Invalid values are ignored with a warning. |
+| `NEXT_OUTPUT=standalone` | `next.config.ts` | Emits a self-contained server in `.next/standalone`. The Dockerfile sets this; Vercel builds do not need it. |
+
+## Docker
+
+```bash
+docker build -t portfolio .
+# optionally: --build-arg NEXT_PUBLIC_SITE_URL=https://example.com
+docker run -p 3000:3000 portfolio
+```
+
+The image is a multi-stage build that runs the standalone Next.js server as a
+non-root user. The build downloads Google fonts, so it needs network access.
 
 ## Editing content
 
@@ -48,14 +69,20 @@ src/
 │   └── puzzles/    StatsChallenge, MarkovChallenge (+ tests)
 ├── context/        GameContext (+ tests)
 └── data/           projects.ts, daily-activity.json
-scripts/            scheduled scripts that rewrite daily-activity.json
+scripts/            scheduled scripts that rewrite daily-activity.json (+ tests)
+Dockerfile          multi-stage container build
 ```
 
-`ARCHITECTURE.md` and `DEPLOYMENT.md` go into more detail.
+`ARCHITECTURE.md` and `DEPLOYMENT.md` go into more detail. Parts of them may be
+aspirational rather than a description of the current code, so check against
+the source.
 
 ## Notes
 
 `scripts/update-daily.js` and `scripts/update_activity.js` are run by the
 scheduled workflows in `.github/workflows/`. They write a randomly chosen
 "current focus", quote and commit count to `src/data/daily-activity.json`;
-those values are generated, not measured.
+those values are generated, not measured. The two scripts currently write
+different JSON shapes to the same file. `update-daily.js` exposes
+`buildActivity` and `writeActivity` and is covered by
+`scripts/update-daily.test.js`.
