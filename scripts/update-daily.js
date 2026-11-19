@@ -22,29 +22,37 @@ const QUOTES = [
     "Before software can be reusable it first has to be usable."
 ];
 
-function getRandomItem(array) {
-    return array[Math.floor(Math.random() * array.length)];
+function getRandomItem(array, random = Math.random) {
+    return array[Math.floor(random() * array.length)];
 }
 
-function generateActivity() {
-    const today = new Date().toISOString().split('T')[0];
-
-    const activity = {
-        date: today,
-        lastUpdated: new Date().toISOString(),
-        currentFocus: getRandomItem(ACTIVITIES),
-        dailyQuote: getRandomItem(QUOTES),
-        commitCount: Math.floor(Math.random() * 10) + 1
+/**
+ * Build one day's activity record. Values are randomly chosen, not measured.
+ * `now` and `random` are injectable so the function can be tested.
+ */
+function buildActivity(now = new Date(), random = Math.random) {
+    return {
+        date: now.toISOString().split('T')[0],
+        lastUpdated: now.toISOString(),
+        currentFocus: getRandomItem(ACTIVITIES, random),
+        dailyQuote: getRandomItem(QUOTES, random),
+        commitCount: Math.floor(random() * 10) + 1
     };
+}
 
+/** Write the activity as JSON, creating the parent directory if needed. */
+function writeActivity(file, activity) {
+    const dir = path.dirname(file);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(file, JSON.stringify(activity, null, 2));
+}
+
+function main() {
+    const activity = buildActivity();
     try {
-        // Ensure directory exists
-        const dir = path.dirname(DATA_FILE);
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-
-        fs.writeFileSync(DATA_FILE, JSON.stringify(activity, null, 2));
+        writeActivity(DATA_FILE, activity);
         console.log('Successfully generated daily activity:', activity);
     } catch (error) {
         console.error('Error writing daily activity:', error);
@@ -52,4 +60,8 @@ function generateActivity() {
     }
 }
 
-generateActivity();
+if (require.main === module) {
+    main();
+}
+
+module.exports = { buildActivity, writeActivity, ACTIVITIES, QUOTES };
